@@ -16,4 +16,8 @@ public class ContactTest {
 	public void deleteContact() {
 		System.out.println("delete contact executed");
 	}
+	@Test
+	public void m1() {
+		System.out.println("from m1()");
+	}
 }
