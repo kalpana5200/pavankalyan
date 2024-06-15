@@ -27,7 +27,7 @@ public class ContactTest {
 
 	@BeforeClass
 	public void beforeClass() throws InterruptedException {
-		String browser = System.getProperty("browser");
+		String browser = System.getProperty("browser","chrome");
 
 //		WebDriver driver = null;
 //		if (browser.equalsIgnoreCase("chrome")) {
