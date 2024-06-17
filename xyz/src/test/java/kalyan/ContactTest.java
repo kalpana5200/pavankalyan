@@ -28,24 +28,6 @@ public class ContactTest {
 	@BeforeClass
 	public void beforeClass() throws InterruptedException {
 		String browser = System.getProperty("browser","chrome");
-
-//		WebDriver driver = null;
-//		if (browser.equalsIgnoreCase("chrome")) {
-//			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver();
-//		} else if (browser.equalsIgnoreCase("edge")) {
-//			WebDriverManager.edgedriver().setup();
-//			driver = new EdgeDriver();
-//		} else if (browser.equalsIgnoreCase("firefox")) {
-//			WebDriverManager.firefoxdriver().setup();
-//			driver = new FirefoxDriver();
-//		}
-		
-//		driver.get("http://localhost:8888/");
-		Thread.sleep(3000);
-		
-//		driver.quit();
-		
 		String env = System.getProperty("envi", "http://localhost:8888/");
 		System.out.println(env);
 		System.out.println("launch "+browser);
@@ -53,5 +35,25 @@ public class ContactTest {
 		System.out.println(user);
 		String password = System.getProperty("password", "root");
 		System.out.println(password);
+		
+
+		WebDriver driver = null;
+		if (browser.equalsIgnoreCase("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		} else if (browser.equalsIgnoreCase("edge")) {
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+		} else if (browser.equalsIgnoreCase("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		}
+		
+		driver.get("http://localhost:8888/");
+		Thread.sleep(3000);
+		
+		driver.quit();
+		
+		
 	}
 }
